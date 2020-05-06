@@ -10,4 +10,4 @@ metadata:
 spec:
   containers:
   - name: my-nginx-container
-    image: gnapiorkowski/my-frontend
+    image: gnapiorkowski/random_number
