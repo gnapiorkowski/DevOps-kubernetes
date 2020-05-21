@@ -17,8 +17,8 @@ spec:
         type: backend
     spec:
       containers:
-      - name: my-mybackend-container
-        image: gnapiorkowski/mybackend
+      - image: gnapiorkowski/mybackend:latest
+        name: my-mybackend-container
         env:
           - name: REDIS_HOST
             value: myredisservice
