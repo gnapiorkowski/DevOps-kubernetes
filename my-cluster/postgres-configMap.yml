@@ -6,6 +6,7 @@ metadata:
   name: postgres-config
 
 data:
-  PGHOST: postgres-service
-  PGUSER: postgres
-  PGDATABASE: postgres
+    PGHOST: mypostgresservice
+    PGUSER: postgres
+    PGDATABASE: postgres
+    PGPORT: "5432"

@@ -4,6 +4,8 @@ WORKDIR /opt/app
 
 COPY ./package.json .
 
+COPY ./public .
+
 RUN yarn install
 
 COPY . .

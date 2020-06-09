@@ -17,26 +17,26 @@ spec:
         type: backend
     spec:
       containers:
-      - image: gnapiorkowski/mybackend:latest
-        name: my-mybackend-container
-        env:
-          - name: REDIS_HOST
-            value: myredisservice
-          - name: REDIS_PORT
-            value: '6379'
-          - name: INIT_MESSAGE
-            valueFrom:
-              configMapKeyRef:
-                name: myapp-config
-                key: WELCOME_MESSAGE
-          - name: PGPASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: myapp-secret
-                key: PGPASSWORD
-        envFrom:
-          - configMapRef:
-              name: postgres-config
+        - image: gnapiorkowski/my-backend:latest
+          name: my-mybackend-container
+          env:
+            - name: REDIS_HOST
+              value: myredisservice
+            - name: REDIS_PORT
+              value: '6379'
+            - name: INIT_MESSAGE
+              valueFrom:
+                configMapKeyRef:
+                  name: myapp-config
+                  key: WELCOME_MESSAGE
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: myapp-secret
+                  key: PGPASSWORD
+          envFrom:
+            - configMapRef:
+                name: postgres-config
 
   replicas: 3
   selector:
